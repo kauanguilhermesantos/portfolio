@@ -1,0 +1,19 @@
+#nome::after, #habilidades::after, #projetos::after {
+    font-family: var(--fonte-secundária);
+    content: " |";
+    animation: piscar 0.65s infinite;
+}
+
+@keyframes piscar {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}

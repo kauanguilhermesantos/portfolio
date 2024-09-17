@@ -1,0 +1,338 @@
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Lato:wght@400;700&display=swap');
+
+:root{
+    --fonte-primaria: 'Do Hyeon', sans-serif;
+    --fonte-secundária: 'Lato', sans-serif;
+    --cor-azul-destaque: #4074D2;
+    --cor-branca: #F6F6F6;
+    --cor-hover: #104cbb;
+    --cor-cinza: #B9B9B9;
+}
+body {
+    background: linear-gradient(225deg, #020024 0%, #001138 35%, #264180 100%);
+}
+
+.barra-navegacao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 51px 51px auto;
+    gap: 64px;
+    font-family: var(--fonte-primaria);
+    font-size: 1.5rem;
+    color: var(--cor-azul-destaque); 
+}
+
+.botoes-menu {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+}
+
+.icon-menu {
+    width: 24px;
+    height: 24px;
+    color: var(--cor-azul-destaque);
+    padding: 0;
+    margin-right: 4px
+}
+
+.botoes-menu:hover {
+    color: var(--cor-hover);
+    border-bottom: 3px solid var(--cor-hover);
+    padding-bottom: 8px;
+}
+
+.home-linha, .habilidades-linha, .projetos-linha {
+    border-bottom: 0.2rem solid var(--cor-azul-destaque);
+    padding-bottom: 8px;
+}
+
+svg {
+    padding-bottom: 2px;
+}
+
+.container {
+    padding: 20px 20px 0;
+    margin: 5rem 9.6875rem 7.3125rem 9.6875rem;
+    display: flex;
+    justify-content: center;
+    gap: 13rem;
+}
+
+.container-apresentacao, .container-minhas-habilidades {
+    width: 548px;
+    margin-bottom: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 3.125rem;
+}
+
+
+.apresentacao, .minhas-habilidades, .projetos {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.apresentacao-nome, .container-minhas-habilidades, .projetos-titulo {
+    font-family: var(--fonte-primaria);
+    font-size: 2.25rem;
+    font-weight: 400;
+    color: var(--cor-azul-destaque);
+}
+
+#enfase-nome {
+    color: var(--cor-azul-destaque);
+}
+
+.apresentacao-texto, .habilidades-texto, .projetos-texto {
+    font-family: var(--fonte-secundária);
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--cor-branca);
+    line-height: 36px;
+}
+
+.container-foto-perfil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.foto-perfil {
+    width: 400px;
+    border-radius: 50%;
+}
+
+.foto-stacks {
+    display: flex;
+    justify-content: center;
+    height: 200px; 
+    width: 300px;
+    margin: 40px 0 100px;
+    padding: 20px;
+}
+
+.container-redes-sociais, .container-certificados {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 25px;
+    font-family: var(--fonte-primaria);
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--cor-branca);
+    padding: 0 84px;
+}
+
+.redes-sociais, .certificados {
+    font-family: var(--fonte-secundária);
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.botoes-redes-sociais, .botao-certificados {
+    border: 2px solid var(--cor-azul-destaque);
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.sociais, .certificado {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-sociais {
+    width: 24px;
+    height: 24px;
+    color: var(--cor-azul-destaque);
+    padding: 0;
+    margin-right: 4px   
+}
+
+.botoes-redes-sociais:hover, .botao-certificados:hover {
+    background-color: var(--cor-hover);
+    border: 2px solid var(--cor-branca);
+}
+
+.rodape {
+    padding: 0 0 30px;
+    text-align: center;
+    font-family: var(--fonte-secundária);
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--cor-cinza);
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+}
+
+.link-nome:hover {
+    text-decoration: underline;
+    color: var(--cor-cinza);
+}
+
+.container-projetos {
+    margin-bottom: 35px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.painel-de-projetos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.nome-do-projeto {
+    font-family: var(--fonte-primaria);
+    font-size: 1.25rem;
+    color: var(--cor-branca);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.pro {
+    border: 1px solid var(--cor-branca);
+    border-radius: 16px;
+    width: 370px;
+}
+
+.icon-projetos {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+
+.link-projetos {
+    padding: 10px;
+    width: 32px;
+    height: 32px;
+    color: var(--cor-branca);
+}   
+
+.link-projetos:hover {
+    color: var(--cor-hover);
+}
+
+@media screen and   (max-width: 1440px) {
+    .barra-navegacao {
+
+        margin: 5rem 5rem auto;
+        gap: 70px;
+        font-size: 2rem;
+    }
+
+    .container {
+        padding: 60px 60px 0 0;
+        margin: 6rem 10rem 10rem 10rem;
+    }
+
+    .apresentacao-nome, .container-minhas-habilidades, .projetos-titulo {
+        font-size: 2.8rem;
+    }
+}
+
+@media screen and (max-width: 1303px) {
+    .container {
+        padding: 60px 60px 0 0;
+        margin: 6rem 8rem 8rem 10rem;
+        gap: 6rem;
+    }
+
+    .apresentacao-nome, .container-minhas-habilidades, .projetos-titulo {
+        font-size: 2.25rem;
+    }
+}
+
+@media screen and (max-width: 880px) {
+    .container {
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+
+    .foto-stacks {
+        height: 200px; 
+        width: 300px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .painel-de-projetos {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .container-apresentacao, .container-minhas-habilidades, .container-projetos {
+        margin: auto;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 60px 60px 0 0;
+        margin: 6rem 8rem 8rem 10rem;
+        gap: 6rem;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .barra-navegacao {
+        gap: 1rem;
+        font-size: 1.2rem;
+        margin-top: 2rem;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        margin: 2rem 0 2rem 0;
+        padding: 1rem;
+        gap: 2rem;
+    }
+    .foto-perfil {
+        width: 200px;
+        border-radius: 50%;
+        margin: 1rem 0;
+    }
+
+    .apresentacao-nome, .container-minhas-habilidades, .projetos-titulo {
+        margin: 1px;
+    }
+
+    .foto-stacks {
+        display: flex;
+        justify-content: center;
+        gap: 0.1rem;
+        margin: 0;
+        padding: 0;
+    }
+
+    .stacks {
+        display: flex;
+        justify-content: center;
+        height: 200px; 
+        width: 100px;
+    }
+
+    .botao-certificados {
+        border: 2px solid var(--cor-azul-destaque);
+        border-radius: 8px;
+        padding: 0.5rem;
+    }
+
+    .pro {
+        width: 320px;
+    }
+}
