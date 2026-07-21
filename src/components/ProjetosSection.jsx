@@ -5,7 +5,7 @@ const projetos = [
     title: "Koda",
     description:
       "Plataforma de aprendizagem de programação baseada estilo de aprendizagem. Permite que os usuários aprendam a programar de forma personalizada, indicando o conteúdo ao seu estilo de aprendizagem.",
-    image: "src/img/koda.png",
+    image: "/img/koda.png",
     technologies: ["Next.js", "TypeScript", "PostgreSQL", "Prisma"],
     liveUrl: "https://github.com/kauanguilhermesantos/plataforma-react",
     githubUrl: "https://github.com/kauanguilhermesantos/plataforma-react",
@@ -14,7 +14,7 @@ const projetos = [
     title: "SkAI",
     description:
       "Plataforma de venda de passagens aéreas com integração de IA para recomendação de voos e otimização de preços. Permite que os usuários encontrem as melhores ofertas e planejem suas viagens de forma eficiente.",
-    image: "src/img/skai.png",
+    image: "/img/skai.png",
     technologies: ["JavaScript", "HTML5", "CSS3", "Python", "Flask", "Gemini API"],
     liveUrl: "https://github.com/Raylan-BR/SCRPAI-IA",
     githubUrl: "https://github.com/Raylan-BR/SCRPAI-IA",
