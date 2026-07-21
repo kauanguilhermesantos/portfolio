@@ -1,7 +1,7 @@
 export default function SobreSection() {
   return (
     <section id="sobre" className="py-20 px-6 md:px-12 lg:px-24">
-      <div className="max-w-4xl">
+      <div className="max-w-5xl mx-auto">
         <h2 className="text-3xl font-semibold uppercase tracking-widest text-blue-500 mb-8">Sobre mim</h2>
         
         <div className="space-y-6 text-blue-200 leading-relaxed">

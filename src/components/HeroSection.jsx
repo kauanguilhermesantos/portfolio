@@ -5,14 +5,14 @@ import { Github, Linkedin, Mail, ArrowDown, MessageCircle } from "lucide-react";
 export default function HeroSection() {
     return (
         <section className="min-h-screen flex flex-col justify-center px-6 md:px-12 lg:px-24 py-20">
-      <div className="max-w-4xl">
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground mb-4 text-gray-200">
+      <div className="max-w-5xl mx-auto">
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-center mb-4 text-gray-200">
           <RevelarNome />
         </h1>
-        <p className="text-xl md:text-3xl text-primary font-medium mb-6 text-blue-500 ">
+        <p className="text-xl md:text-3xl text-center font-medium mb-6 text-blue-500 ">
             Desenvolvedor <Typewriter />
         </p>
-        <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mb-8 text-blue-300">
+        <p className="text-lg md:text-xl text-center text-muted-foreground leading-relaxed max-w-2xl mb-8 text-blue-300">
           Desenvolvo soluções digitais eficientes, escaláveis e de alta performance, focadas em resolver problemas reais.
         </p>
 
@@ -25,7 +25,7 @@ export default function HeroSection() {
             <span className="uppercase text-sm tracking-widest">Sobre</span>
           </a>
           <a 
-            href="#experiencia" 
+            href="#habilidades" 
             className="text-blue-500 hover:text-blue-500 transition-colors flex items-center gap-2 group font-semibold"
           >
             <span className="w-8 h-px bg-blue-500 group-hover:w-16 group-hover:bg-blue-500 transition-all" />
@@ -77,7 +77,7 @@ export default function HeroSection() {
       </div>
 
       <div className="text-blue-500 absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <ArrowDown className="w-8 h-8" />
+        <ArrowDown href="#sobre" className="w-8 h-8" />
       </div>
     </section>
     )

@@ -33,8 +33,8 @@ export default function RevelarNome() {
   }, [])
 
   return (
-    <h1 className="text-5xl font-extrabold text-gray-200 bg-clip-text  tracking-wide">
+    <span className="text-5xl font-extrabold text-gray-200 bg-clip-text  tracking-wide">
       {texto}
-    </h1>
+    </span>
   )
 }
