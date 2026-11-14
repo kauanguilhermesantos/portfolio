@@ -1,179 +1,69 @@
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
 
+const links = [
+  { name: "Sobre mim", href: "#sobre" },
+  { name: "Habilidades", href: "#habilidades" },
+  { name: "Projetos", href: "#projetos" },
+]
+
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
 
-  const links = [
-    { name: "Sobre mim", href: "#sobre" },
-    { name: "Habilidades", href: "#habilidades" },
-    { name: "Projetos", href: "#projetos" },
-    { name: "Contato", href: "#contato" },
-  ]
-
   return (
-    <header
-      className="
-        fixed
-        top-0
-        left-0
-        right-0
-        z-50
-        flex
-        items-center
-        justify-between
-        px-6
-        md:px-12
-        py-5
-        backdrop-blur-md
-        border-b
-        border-blue-900/50
-      "
-    >
-
-      {/* Logo */}
-      <h1
-        className="
-          font-bold
-          text-2xl
-          md:text-3xl
-          bg-linear-to-r
-          from-blue-400
-          to-blue-700
-          bg-clip-text
-          text-transparent
-        "
-      >
-        <a href="/">
-          Kauan Santos
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-line bg-ink/75 backdrop-blur-md">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 md:px-12">
+        <a href="/" aria-label="Kauan Santos — início" className="font-mono text-lg font-bold tracking-[-0.04em] text-fg md:text-xl">
+          kauan<span className="text-accent">_</span>santos
         </a>
-      </h1>
 
-
-      {/* Menu Desktop */}
-      <nav className="hidden md:block">
-
-        <ul className="flex items-center gap-8">
-
-          {links.map((link) => (
-
-            <li key={link.href}>
-
-              <a
-                href={link.href}
-                className={`
-                  text-gray-300
-                  hover:text-blue-400
-                  transition-colors
-                  ${
-                    link.name === "Contato"
-                      ? `
-                        bg-blue-600
-                        hover:bg-blue-500
-                        text-white
-                        px-4
-                        py-2
-                        rounded-lg
-                      `
-                      : ""
-                  }
-                `}
-              >
-                {link.name}
-              </a>
-
-            </li>
-
-          ))}
-
-        </ul>
-
-      </nav>
-
-
-
-      {/* Botão Mobile */}
-      <button
-        className="
-          md:hidden
-          text-blue-400
-        "
-        onClick={() => setMenuOpen(!menuOpen)}
-        aria-label="Abrir menu"
-      >
-        {menuOpen ? (
-          <X className="w-7 h-7" />
-        ) : (
-          <Menu className="w-7 h-7" />
-        )}
-      </button>
-
-
-
-      {/* Menu Mobile */}
-      {menuOpen && (
-
-        <nav
-          className="
-            absolute
-            top-full
-            left-0
-            right-0
-            bg-gray-950
-            border-b
-            border-blue-900
-            md:hidden
-          "
-        >
-
-          <ul
-            className="
-              flex
-              flex-col
-              items-center
-              gap-6
-              py-8
-            "
-          >
-
+        <nav className="hidden md:block">
+          <ul className="flex items-center gap-10 font-mono text-[13px] tracking-wide">
             {links.map((link) => (
-
               <li key={link.href}>
+                <a href={link.href} className="text-muted transition-colors hover:text-fg">
+                  {link.name}
+                </a>
+              </li>
+            ))}
+            <li>
+              <a
+                href="#contato"
+                className="rounded-full bg-accent px-[18px] py-2.5 font-medium text-white transition-colors hover:bg-blue-500"
+              >
+                Contato
+              </a>
+            </li>
+          </ul>
+        </nav>
 
+        <button
+          className="text-fg md:hidden"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
+          aria-expanded={menuOpen}
+        >
+          {menuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+        </button>
+      </div>
+
+      {menuOpen && (
+        <nav className="border-t border-line bg-ink md:hidden">
+          <ul className="flex flex-col gap-1 px-6 py-6 font-mono text-sm">
+            {[...links, { name: "Contato", href: "#contato" }].map((link) => (
+              <li key={link.href}>
                 <a
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
-                  className={`
-                    text-gray-300
-                    hover:text-blue-400
-                    transition-colors
-
-                    ${
-                      link.name === "Contato"
-                        ? `
-                          bg-blue-600
-                          text-white
-                          px-5
-                          py-2
-                          rounded-lg
-                        `
-                        : ""
-                    }
-                  `}
+                  className="block py-3 text-soft transition-colors hover:text-accent"
                 >
                   {link.name}
                 </a>
-
               </li>
-
             ))}
-
           </ul>
-
         </nav>
-
       )}
-
     </header>
   )
 }
