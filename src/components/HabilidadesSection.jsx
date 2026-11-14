@@ -1,49 +1,5 @@
 import { Cpu } from "lucide-react"
-
-const techGroups = [
-  {
-    title: "Linguagens",
-    items: [
-      { name: "TypeScript", slug: "typescript" },
-      { name: "JavaScript", slug: "javascript" },
-      { name: "Python", slug: "python" },
-      { name: "Java", slug: "java" },
-    ],
-  },
-  {
-    title: "Frontend",
-    items: [
-      { name: "React", slug: "react" },
-      { name: "Next.js", slug: "nextdotjs" },
-      { name: "Tailwind CSS", slug: "tailwindcss" },
-    ],
-  },
-  {
-    title: "Backend",
-    items: [
-      { name: "Node.js", slug: "nodedotjs" },
-      { name: "Express", slug: "express" },
-      { name: "Flask", slug: "flask" },
-      { name: "Spring Boot", slug: "spring" },
-    ],
-  },
-  {
-    title: "Banco de Dados",
-    items: [
-      { name: "PostgreSQL", slug: "postgresql" },
-      { name: "MongoDB", slug: "mongodb" },
-      { name: "Prisma", slug: "prisma" },
-    ],
-  },
-  {
-    title: "DevOps",
-    items: [
-      { name: "Docker", slug: "docker" },
-      { name: "Git", slug: "git" },
-      { name: "GitHub", slug: "github" },
-    ],
-  },
-]
+import { techGroups } from "../data/tecnologias"
 
 const engineeringSkills = [
   "Arquitetura de Software",
@@ -55,176 +11,51 @@ const engineeringSkills = [
 
 export default function HabilidadesSection() {
   return (
-    <section
-      id="habilidades"
-      className="py-20 px-6 md:px-12 lg:px-24"
-    >
-      <div className="max-w-6xl mx-auto">
-
-        <h2 className="text-3xl font-semibold uppercase tracking-widest text-blue-400 mb-8">
-          Habilidades e Tecnologias
-        </h2>
-
-        <div className="
-          grid 
-          sm:grid-cols-2 
-          lg:grid-cols-3 
-          gap-4
-        ">
-
-          {techGroups.map((group) => (
-
-            <article
-              key={group.title}
-              className="
-                p-6
-                rounded-xl
-                bg-blue-950/40
-                border
-                border-blue-900
-                hover:border-blue-500/50
-                transition-colors
-              "
-            >
-
-              <h3 className="
-                text-xs
-                font-semibold
-                uppercase
-                tracking-widest
-                text-blue-400
-                mb-5
-              ">
-                {group.title}
-              </h3>
-
-
-              <div className="grid grid-cols-3 gap-4">
-
-                {group.items.map((item) => (
-
-                  <div
-                    key={item.name}
-                    className="
-                      flex
-                      flex-col
-                      items-center
-                      gap-2
-                      text-center
-                    "
-                  >
-
-                    <div className="
-                      w-12
-                      h-12
-                      flex
-                      items-center
-                      justify-center
-                      rounded-lg
-                      bg-blue-900/50
-                      hover:bg-blue-800/70
-                      transition-colors
-                    ">
-
-                      <img
-                        src={`https://cdn.simpleicons.org/${item.slug}`}
-                        alt={item.name}
-                        className="
-                          w-6
-                          h-6
-                          opacity-80
-                          hover:opacity-100
-                          transition-opacity
-                        "
-                      />
-
-                    </div>
-
-
-                    <span className="
-                      text-[11px]
-                      leading-tight
-                      text-blue-300
-                    ">
-                      {item.name}
-                    </span>
-
-                  </div>
-
-                ))}
-
-              </div>
-
-            </article>
-
-          ))}
-
-
-
-          {/* Engenharia de Software */}
-          <article
-            className="
-              p-6
-              rounded-xl
-              bg-blue-950/40
-              border
-              border-blue-900
-              hover:border-blue-500/50
-              transition-colors
-              sm:col-span-2
-              lg:col-span-1
-            "
-          >
-
-            <div className="flex items-center gap-2 mb-5">
-
-              <Cpu className="w-4 h-4 text-blue-400" />
-
-              <h3 className="
-                text-xs
-                font-semibold
-                uppercase
-                tracking-widest
-                text-blue-400
-              ">
-                Engenharia de Software
-              </h3>
-
-            </div>
-
-
-            <div className="flex flex-wrap gap-2">
-
-              {engineeringSkills.map((item) => (
-
-                <span
-                  key={item}
-                  className="
-                    px-3
-                    py-1.5
-                    rounded-full
-                    text-xs
-                    bg-blue-900/50
-                    text-blue-300
-                    border
-                    border-blue-800
-                    hover:bg-blue-500/20
-                    hover:text-blue-100
-                    transition-colors
-                  "
-                >
-                  {item}
-                </span>
-
-              ))}
-
-            </div>
-
-          </article>
-
-
+    <section id="habilidades" className="scroll-mt-20">
+      <div className="mx-auto flex max-w-7xl flex-col gap-12 px-6 py-24 md:gap-16 md:px-12 md:py-32">
+        <div className="flex flex-col gap-5">
+          <h2 data-revelar style={{ "--atraso": "100ms" }} className="font-display text-4xl font-bold leading-[1.08] tracking-[-0.03em] text-fg md:text-5xl">
+            Habilidades e Tecnologias
+          </h2>
         </div>
 
+        <div className="border-t border-line">
+          {techGroups.map((group, i) => (
+            <div key={group.title} data-revelar style={{ "--atraso": `${i * 90}ms` }} className="flex flex-col gap-4 border-b border-line py-7 md:flex-row md:items-center">
+              <h3 className="font-mono text-[13px] uppercase tracking-[0.08em] text-muted md:w-80 md:shrink-0">
+                {group.title}
+              </h3>
+              <ul className="flex flex-wrap gap-3">
+                {group.items.map((item) => (
+                  <li
+                    key={item.name}
+                    className="group/pill flex items-center gap-2.5 rounded-full border border-line bg-surface py-2.5 pl-3.5 pr-[18px] text-[15px] font-medium text-fg transition duration-300 hover:-translate-y-1 hover:border-accent/60 hover:shadow-[0_10px_28px_-12px_rgba(59,130,246,0.6)]"
+                  >
+                    <img src={item.icon ?? `https://cdn.simpleicons.org/${item.slug}`} alt="" className="h-[18px] w-[18px] transition-transform duration-500 group-hover/pill:rotate-[360deg]" loading="lazy" />
+                    {item.name}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+
+          <div data-revelar style={{ "--atraso": `${techGroups.length * 90}ms` }} className="flex flex-col gap-4 border-b border-line py-7 md:flex-row md:items-center">
+            <h3 className="flex items-center gap-2 font-mono text-[13px] uppercase tracking-[0.08em] text-accent md:w-80 md:shrink-0">
+              <Cpu className="h-4 w-4" />
+              Engenharia de Software
+            </h3>
+            <ul className="flex flex-wrap gap-3">
+              {engineeringSkills.map((item) => (
+                <li
+                  key={item}
+                  className="rounded-full border border-[#1e3a66] bg-accent/8 px-[18px] py-2.5 text-[15px] font-medium text-accent-soft transition duration-300 hover:-translate-y-1 hover:border-accent hover:bg-accent/15"
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
   )
