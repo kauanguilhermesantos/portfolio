@@ -33,8 +33,6 @@ export default function RevelarNome() {
   }, [])
 
   return (
-    <span className="text-5xl font-extrabold text-gray-200 bg-clip-text  tracking-wide">
-      {texto}
-    </span>
+    <span aria-label={nome}>{texto}</span>
   )
 }

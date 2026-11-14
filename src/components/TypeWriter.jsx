@@ -37,7 +37,7 @@ export default function Typewriter() {
   }, [texto, apagando, indiceCargo])
 
   return (
-    <span className="text-blue-500 border-r-2 border-blue-500 pr-1 ">
+    <span className="border-r-2 border-accent pr-1 text-accent">
       {texto}
     </span>
   )
