@@ -17,11 +17,13 @@ function Lista({ hidden }) {
 
 export default function TechMarquee() {
   return (
-    <section aria-label="Tecnologias que utilizo" className="group overflow-hidden bg-surface/40 py-8 [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
-      {/* lista duplicada: a animação anda -50% e recomeça sem emenda visível */}
-      <div className="animate-marquee flex w-max group-hover:[animation-play-state:paused]">
-        <Lista />
-        <Lista hidden />
+    <section aria-label="Tecnologias que utilizo" className="group relative z-10 overflow-hidden rounded-t-[25px] bg-surface pb-4 pt-10">
+      <div className="overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+        {/* lista duplicada: a animação anda -50% e recomeça sem emenda visível */}
+        <div className="animate-marquee flex w-max group-hover:[animation-play-state:paused]">
+          <Lista />
+          <Lista hidden />
+        </div>
       </div>
     </section>
   )
