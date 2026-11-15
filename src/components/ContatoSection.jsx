@@ -27,7 +27,14 @@ export default function ContatoSection() {
           >
             {TITULO.split(" ").map((palavra, i) => (
               // inline-block apaga o espaço do fim, então a separação vem da margem
-              <span key={i} aria-hidden data-revelar className="mr-[0.25em] inline-block" style={{ "--atraso": `${i * 70}ms` }}>
+              <span
+                key={i}
+                aria-hidden
+                data-revelar
+                // as duas últimas palavras ganham a fonte mono de destaque
+                className={`mr-[0.25em] inline-block ${i >= TITULO.split(" ").length - 2 ? "font-mono font-medium not-italic text-accent-soft" : ""}`}
+                style={{ "--atraso": `${i * 70}ms` }}
+              >
                 {palavra}
                 {i === TITULO.split(" ").length - 1 && <span className="text-accent">.</span>}
               </span>

@@ -15,7 +15,8 @@ export default function HabilidadesSection() {
       <div className="mx-auto flex max-w-7xl flex-col gap-12 px-6 py-24 md:gap-16 md:px-12 md:py-32">
         <div className="flex flex-col gap-5">
           <h2 data-revelar style={{ "--atraso": "100ms" }} className="font-display text-4xl font-bold leading-[1.08] tracking-[-0.03em] text-fg md:text-5xl">
-            Habilidades e Tecnologias
+            Habilidades e{" "}
+            <em className="font-mono font-medium not-italic text-accent-soft">tecnologias</em>
           </h2>
         </div>
 
