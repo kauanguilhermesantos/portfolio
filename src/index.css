@@ -12,6 +12,43 @@
   --font-display: "Space Grotesk", sans-serif;
   --font-sans: "Inter", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
+
+  --ease-suave: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-saida: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --animate-marquee: marquee 40s linear infinite;
+  --animate-fade-in-down: fade-in-down 0.2s ease-out;
+  --animate-surgir: surgir 1.1s var(--ease-saida) both;
+  --animate-flutuar: flutuar 14s ease-in-out infinite alternate;
+
+  @keyframes marquee {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  @keyframes fade-in-down {
+    0% {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  /* entrada das palavras do hero: sobe, perde o blur e aparece */
+  @keyframes surgir {
+    from {
+      opacity: 0;
+      filter: blur(12px);
+      transform: translateY(40%);
+    }
+  }
+  @keyframes flutuar {
+    to {
+      transform: translate3d(-6%, 4%, 0) scale(1.15);
+    }
+  }
 }
 
 html {
@@ -21,16 +58,7 @@ html {
 body {
   background: var(--color-ink);
   color: var(--color-fg);
-}
-
-@theme {
-  --animate-marquee: marquee 40s linear infinite;
-
-  @keyframes marquee {
-    to {
-      transform: translateX(-50%);
-    }
-  }
+  overflow-x: clip;
 }
 
 /* quem pede menos movimento ainda vê o carrossel, só que bem mais lento (e ele pausa no hover) */
@@ -38,14 +66,23 @@ body {
   .animate-marquee {
     animation-duration: 120s;
   }
+  .animate-surgir,
+  .animate-flutuar {
+    animation: none;
+  }
 }
 
 /* revelar ao rolar: App.jsx adiciona .visivel quando o elemento entra na tela; --atraso escalona irmãos */
 [data-revelar] {
   opacity: 0;
   translate: 0 28px;
-  transition: opacity 0.8s ease-out, translate 0.8s cubic-bezier(0.16, 1, 0.3, 1), clip-path 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+  filter: blur(8px);
+  transition: opacity 0.9s ease-out, translate 0.9s var(--ease-saida), filter 0.9s ease-out,
+    clip-path 1.1s var(--ease-saida);
   transition-delay: var(--atraso, 0ms);
+}
+[data-revelar="direita"] {
+  translate: 64px 0;
 }
 [data-revelar="imagem"] {
   translate: 0 0;
@@ -54,13 +91,16 @@ body {
 [data-revelar].visivel {
   opacity: 1;
   translate: 0 0;
+  filter: none;
   clip-path: inset(0 0 0 0 round 20px);
 }
 
 @media (prefers-reduced-motion: reduce) {
   [data-revelar],
+  [data-revelar="direita"],
   [data-revelar="imagem"] {
     translate: 0 0;
+    filter: none;
     clip-path: none;
   }
 }
