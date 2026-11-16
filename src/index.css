@@ -92,6 +92,9 @@ body {
   opacity: 1;
   translate: 0 0;
   filter: none;
+}
+/* só a variante imagem recorta: em texto o clip-path cortava as descendentes (p, j, ç) */
+[data-revelar="imagem"].visivel {
   clip-path: inset(0 0 0 0 round 20px);
 }
 
