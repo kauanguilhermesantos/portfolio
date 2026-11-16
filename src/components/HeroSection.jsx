@@ -18,7 +18,7 @@ const atraso = (ms) => ({ animationDelay: `${ms}ms` })
 
 export default function HeroSection() {
   return (
-    <section className="relative mb-[-25px] h-svh min-h-[640px] overflow-hidden">
+    <section className="relative mb-[-25px] min-h-svh overflow-hidden">
       {/* fundo vivo no lugar do vídeo: brilhos azuis flutuando + grade sutil */}
       <div aria-hidden className="absolute inset-0">
         <div className="absolute -right-[10%] -top-[20%] h-[70vmax] w-[70vmax] animate-flutuar rounded-full bg-[radial-gradient(circle,rgba(59,130,246,0.28),transparent_60%)] blur-2xl" />
@@ -27,17 +27,17 @@ export default function HeroSection() {
       </div>
       <div aria-hidden className="absolute inset-0 bg-black/20" />
 
-      <div className="relative flex h-full flex-col items-center justify-end gap-8 px-6 pb-16 text-center md:pb-20">
-        <p style={atraso(100)} className="animate-surgir font-mono text-base uppercase tracking-[0.2em] text-muted md:text-lg">
+      <div className="relative flex min-h-svh flex-col items-center justify-end gap-6 px-5 pb-16 pt-28 sm:gap-8 sm:px-6 text-center md:pb-20">
+        <p style={atraso(100)} className="animate-surgir font-mono text-xs uppercase tracking-[0.15em] text-muted sm:text-base sm:tracking-[0.2em] md:text-lg">
           Desenvolvedor <Typewriter />
         </p>
 
-        <h1 className="font-display text-6xl font-bold leading-[0.95] tracking-[-0.045em] text-fg sm:text-8xl lg:text-[136px]">
+        <h1 className="font-display text-[clamp(2.5rem,12vw,3.75rem)] font-bold leading-[0.95] tracking-[-0.045em] text-fg sm:text-8xl lg:text-[136px]">
           <span style={atraso(200)} className="inline-block animate-surgir">
             <RevelarNome />
             <span className="text-accent">.</span>
           </span>
-          <span className="mt-2 block text-4xl font-normal tracking-tight text-soft sm:text-5xl lg:text-[64px]">
+          <span className="mt-2 block text-[clamp(1.75rem,8.5vw,2.25rem)] font-normal tracking-tight text-soft sm:text-5xl lg:text-[64px]">
             <span style={atraso(450)} className="inline-block animate-surgir">código que resolve</span>{" "}
             <em
               className="inline-block animate-surgir pr-2 font-mono not-italic text-accent-soft"
@@ -53,12 +53,12 @@ export default function HeroSection() {
         </p>
 
         <div style={atraso(900)} className="flex animate-surgir flex-col items-center gap-5">
-          <div className="flex items-center gap-4 rounded-xl border border-white/5 bg-black/25 py-1 pl-6 pr-1 backdrop-blur-md">
+          <div className="flex items-center gap-3 rounded-xl border border-white/5 bg-black/25 py-1 pl-4 pr-1 sm:gap-4 sm:pl-6 backdrop-blur-md">
             <span className="hidden text-sm font-medium text-fg sm:inline">Sem ruído. Só código limpo, entregue com cuidado.</span>
             <span className="text-sm font-medium text-fg sm:hidden">Código limpo, com cuidado.</span>
             <a
               href="#projetos"
-              className="group flex items-center gap-2 rounded-xl bg-accent px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-blue-500"
+              className="group flex shrink-0 items-center gap-2 whitespace-nowrap rounded-xl bg-accent px-4 py-2.5 sm:px-5 text-sm font-medium text-white transition-colors hover:bg-blue-500"
             >
               Ver projetos
               <ArrowDown className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />

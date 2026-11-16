@@ -96,7 +96,7 @@ export default function ProjetosSection() {
               ref={(el) => (cards.current[i] = el)}
               data-indice={i}
               data-revelar="direita"
-              className="group flex flex-col gap-6 rounded-3xl border border-line bg-surface/70 p-6 backdrop-blur-sm md:p-10"
+              className="group flex flex-col gap-6 rounded-3xl border border-line bg-surface/70 p-5 backdrop-blur-sm sm:p-6 md:p-10"
             >
               <div className="flex items-center justify-between">
                 <h3 className="font-display text-3xl font-bold tracking-[-0.03em] text-fg md:text-4xl">{project.title}</h3>
@@ -132,7 +132,7 @@ export default function ProjetosSection() {
                   href={project.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group/btn flex items-center gap-2 rounded-full bg-fg px-5 py-3 text-[15px] font-medium text-ink transition-colors hover:bg-white"
+                  className="group/btn flex items-center gap-2 rounded-full bg-fg px-4 py-3 sm:px-5 text-[15px] font-medium text-ink transition-colors hover:bg-white"
                 >
                   Ver projeto
                   <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:-translate-y-0.5 group-hover/btn:translate-x-0.5" />
@@ -141,7 +141,7 @@ export default function ProjetosSection() {
                   href={project.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 rounded-full border border-line px-5 py-3 text-[15px] font-medium text-soft transition-colors hover:border-accent hover:text-accent"
+                  className="flex items-center gap-2 rounded-full border border-line px-4 py-3 sm:px-5 text-[15px] font-medium text-soft transition-colors hover:border-accent hover:text-accent"
                 >
                   <Github className="h-4 w-4" strokeWidth={1.75} />
                   GitHub

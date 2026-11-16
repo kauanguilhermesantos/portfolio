@@ -23,7 +23,7 @@ export default function ContatoSection() {
         <div className="mx-auto flex max-w-7xl flex-col gap-10 px-6 pb-28 pt-28 md:px-12 md:pt-36">
           <h2
             aria-label={TITULO + "."}
-            className="max-w-[1100px] font-display text-5xl font-bold leading-none tracking-[-0.045em] text-fg md:text-7xl lg:text-8xl"
+            className="max-w-[1100px] font-display text-[clamp(2.25rem,11vw,3rem)] font-bold leading-[1.05] md:leading-none tracking-[-0.045em] text-fg md:text-7xl lg:text-8xl"
           >
             {TITULO.split(" ").map((palavra, i) => (
               // inline-block apaga o espaço do fim, então a separação vem da margem
@@ -53,7 +53,7 @@ export default function ContatoSection() {
               href={WHATSAPP_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative isolate flex w-fit items-center gap-3 rounded-full bg-accent px-8 py-5 text-lg font-semibold text-white transition duration-300 hover:-translate-y-1 hover:bg-blue-500 hover:shadow-[0_16px_40px_-12px_rgba(59,130,246,0.8)]"
+              className="group relative isolate flex w-fit items-center self-center lg:self-auto gap-3 rounded-full bg-accent px-6 py-4 text-base sm:px-8 sm:py-5 sm:text-lg font-semibold text-white transition duration-300 hover:-translate-y-1 hover:bg-blue-500 hover:shadow-[0_16px_40px_-12px_rgba(59,130,246,0.8)]"
             >
               {/* anel pulsando atrás do botão chama atenção para o CTA */}
               <span aria-hidden className="absolute inset-0 -z-10 animate-ping rounded-full bg-accent/40 [animation-duration:2.4s] motion-reduce:hidden" />
@@ -65,9 +65,9 @@ export default function ContatoSection() {
       </section>
 
       <footer>
-        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-8 font-mono text-[13px] tracking-wide sm:flex-row sm:items-center sm:justify-between md:px-12">
+        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 pb-24 pt-8 font-mono sm:pb-8 text-[13px] tracking-wide sm:flex-row sm:items-center sm:justify-between md:px-12">
           <span className="text-muted">© <span className="font-bold text-soft">kauan<span className="text-accent">_</span>santos</span></span>
-          <ul className="flex items-center gap-8">
+          <ul className="flex flex-wrap items-center gap-x-6 gap-y-3 sm:gap-8">
             {links.map((link) => (
               <li key={link.label}>
                 <a
