@@ -8,4 +8,6 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
+  // expõe na rede local para testar no celular (mesmo Wi-Fi)
+  server: { host: true },
 })
