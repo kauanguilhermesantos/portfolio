@@ -28,7 +28,8 @@ function App() {
 
   return (
     <>
-      <div className='min-h-screen bg-ink font-sans text-fg antialiased'>
+      {/* clip aqui (não só no body): no celular o body não segura o card de projeto entrando com translate da direita */}
+      <div className='min-h-screen overflow-x-clip bg-ink font-sans text-fg antialiased'>
         <Header />
         <HeroSection />
         <TechMarquee />
